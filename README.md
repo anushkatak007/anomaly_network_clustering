@@ -33,8 +33,9 @@ This is the most fundamental clustering technique. K means is an iterative clust
 
 As the name suggests, this technique forms clusters based on densities. In essence, the algorithm looks for densely populated regions to assign them as one cluster. It takes into account to minimize intra-cluster distance and maximize inter-cluster distance, which makes it a better modelling technique than DB scan, even for outlier detection. This is demonstrated in the Figure [fig:DBScan] below.
 
-![Image obtain from the post “DBSCAN: What is it? When to use it? How to use it?”](images/image1.jpeg "fig:") [fig:DBScan]
+![Image obtain from the post “DBSCAN: What is it? When to use it? How to use it?”](images/image2.jpeg "fig:") [fig:DBScan]
 
+<img src="https://render.githubusercontent.com/render/math?math=R_{ij} = \frac{s_i + s_j}{d_{ij}}\] \[d_{ij} = d(v_i, v_j), s_i = \frac{1}{\mid\mid{c_i}\mid\mid}\sum_{x \in c_i} d(x, v_i)">
 \[R_{ij} = \frac{s_i + s_j}{d_{ij}}\] \[d_{ij} = d(v_i, v_j), s_i = \frac{1}{\mid\mid{c_i}\mid\mid}\sum_{x \in c_i} d(x, v_i)\]
 
 ### Mean-Shift Clustering
@@ -97,7 +98,7 @@ As shown in Table [tab:kmeans], various clusters were used and their Davies Boul
 
 Now, deciding how well our clusters worked on separating or identifying anomalies for the data. As we have no way of really knowing which points are the anomalies in the data we resort to using methods like Isolation Forest and K-Nearest-Neighbors to find anomalies and see if they somehow overlap with what out clusters indicate. First of all we see that K-NN and Isolation Forest return almost 95% of the same points as anomalies, which is quite good for the purpose of this research. Then we go on to see how many of this points belong to which clusters. In Table [tab:gmmAno] and Table [tab:kmeansAno] we see that each point belongs to some cluster and for those clusters we have calculated how many of them are anomalies. It is observed that for GMM one cluster is fully identified as anomalies while the rest of the anomalies are divided into different clusters, but for K-Means it can be observed that for 4 clusters the anomalies are consisting of almost 100% anomalies. So K-means did a really good job of assigning anomalies to different clusters.
 
-[!h]
+
 
 <span>|c|c|c|c|c|</span> Cluster \# & & &
 Cluster \# 1 & 25981 & 517 & 144
@@ -107,9 +108,7 @@ Cluster \# 4 & 197 & 197 & 185
 Cluster \# 5 & 7362 & 642 & 386
 Total & 49548 & 4955 & 4793
 
-[tab:gmmAno]
 
-[!h]
 
 <span>|c|c|c|c|c|</span> Cluster \# & & &
 Cluster \# 1 & 49127 & 4562 & 4418
@@ -119,11 +118,11 @@ Cluster \# 4 & 239 & 211 & 201
 Cluster \# 5 & 24 & 24 & 24
 Total & 49548 & 4955 & 4793
 
-[tab:kmeansAno]
+
 
 ![Elbow Plot shows optimal number of clusters i.e. 5](images/image1.jpeg "fig:") [fig:elbow]
 
-[!h]
+
 
 |Clusters|Davies Bouldin Score|Silhouette Score|
 |:------:|:------------------:|:--------------:|
@@ -146,9 +145,7 @@ Total & 49548 & 4955 & 4793
 |18|0.363389|0.988371|
 |19|0.358022|0.988003|
 
-[tab:kmeans]
 
-[!htb]
 
 |Clusters|Davies Bouldin Score|Silhouette Score|
 |:------:|:------------------:|:--------------:|
@@ -157,7 +154,7 @@ Total & 49548 & 4955 & 4793
 |DBSCAN|2.094600|-0.976573|
 |EM Clustering with GMM|0.5396314866914412|0.6511184797554266|
 
-[tab:evalall]
+
 
 Conclusions and Future Work
 ===========================
