@@ -1,4 +1,4 @@
-# anomaly_network_clutering
+# Anomaly Detection in Network Traffic using Clustering Techniques
 
 Malicious cyber attacks is a common phenomenon in today’s world, which puts at more risk our data. One’s data is one’s property that needs security. Anomaly detection is an important technique to discover data points that act different from the norm. We apply this concept to contribute to network safety and security. With the help of publicly data set available on UCI known as Detection of IOT Botnet Attacks, we analyse and study the network properties. We use K means, DB Scan, Mean-Shift and Expectation Maximization clustering using Gaussian Mixture Models algorithms to create a comparative study of clustering techniques and assess the performance of each technique. This is followed by detecting anomalies by the same techniques and assessing the performance of anomaly detection and finally conclude which technique gives best result to detect anomaly in the traffic.
 
@@ -33,7 +33,7 @@ This is the most fundamental clustering technique. K means is an iterative clust
 
 As the name suggests, this technique forms clusters based on densities. In essence, the algorithm looks for densely populated regions to assign them as one cluster. It takes into account to minimize intra-cluster distance and maximize inter-cluster distance, which makes it a better modelling technique than DB scan, even for outlier detection. This is demonstrated in the Figure [fig:DBScan] below.
 
-![Image obtain from the post “DBSCAN: What is it? When to use it? How to use it?”](Images/dbscan.png "fig:") [fig:DBScan]
+![Image obtain from the post “DBSCAN: What is it? When to use it? How to use it?”](images/image1.jpeg "fig:") [fig:DBScan]
 
 \[R_{ij} = \frac{s_i + s_j}{d_{ij}}\] \[d_{ij} = d(v_i, v_j), s_i = \frac{1}{\mid\mid{c_i}\mid\mid}\sum_{x \in c_i} d(x, v_i)\]
 
@@ -121,7 +121,7 @@ Total & 49548 & 4955 & 4793
 
 [tab:kmeansAno]
 
-![Elbow Plot shows optimal number of clusters i.e. 5](Images/Elbow.jpeg "fig:") [fig:elbow]
+![Elbow Plot shows optimal number of clusters i.e. 5](images/image1.jpeg "fig:") [fig:elbow]
 
 [!h]
 
@@ -171,6 +171,15 @@ Acknowledgements
 
 We take this opportunity to acknowledge the contributions of those who made this project work substantial. Our mentor, Dr. Tina Eliassi Rad constantly guided us in the right direction from recommending useful and up to date data sets to suggesting the art of the state techniques. This ensured our work was headed in the right direction at all times. Time and again, the Course material provided by our Professor, Dr. Tina Eliassi Rad, helped us resolve many minor hiccups we had in the course of the project. Other useful resources were Research papers on the topic that provided us with clear understanding of the problem, its intensity which helped us come up with good insights eventually.
 
-<span>99</span>
+References
+================
 
-https://en.wikipedia.org/wiki/Mean\_shift/ https://archive.ics.uci.edu/ml/datasets/detection\_of \_IoT\_botnet\_attacks\_N\_BaIoT https://towardsdatascience.com/anomaly-detection-for-dummies-15f148e559c1 https://towardsdatascience.com/best-clustering-algorithms-for-anomaly-detection-d5b7412537c8 http://cs.uef.fi/sipu/pub/MSc\_JiaweiYang.pdf https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68 https://annalyzin.wordpress.com/2016/09/14/k-nearest-neighbors-anomaly-detection-tutorial/ https://blog.easysol.net/using-isolation-forests-anamoly-detection/ https://www.kdnuggets.com/2017/04/datascience -introduction -anomaly-detection.html
+- https://en.wikipedia.org/wiki/Mean\_shift/
+- https://archive.ics.uci.edu/ml/datasets/detection\_of\_IoT\_botnet\_attacks\_N\_BaIoT
+- https://towardsdatascience.com/anomaly-detection-for-dummies-15f148e559c1
+- https://towardsdatascience.com/best-clustering-algorithms-for-anomaly-detection-d5b7412537c8 
+- http://cs.uef.fi/sipu/pub/MSc\_JiaweiYang.pdf 
+- https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68
+- https://annalyzin.wordpress.com/2016/09/14/k-nearest-neighbors-anomaly-detection-tutorial/
+- https://blog.easysol.net/using-isolation-forests-anamoly-detection/ 
+- https://www.kdnuggets.com/2017/04/datascience-introduction-anomaly-detection.html
