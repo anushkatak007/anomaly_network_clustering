@@ -31,12 +31,14 @@ This is the most fundamental clustering technique. K means is an iterative clust
 
 ### Density-based spatial clustering of applications with noise (DBSCAN)
 
-As the name suggests, this technique forms clusters based on densities. In essence, the algorithm looks for densely populated regions to assign them as one cluster. It takes into account to minimize intra-cluster distance and maximize inter-cluster distance, which makes it a better modelling technique than DB scan, even for outlier detection. This is demonstrated in the Figure [fig:DBScan] below.
+As the name suggests, this technique forms clusters based on densities. In essence, the algorithm looks for densely populated regions to assign them as one cluster. It takes into account to minimize intra-cluster distance and maximize inter-cluster distance, which makes it a better modelling technique than DB scan, even for outlier detection. This is demonstrated in the Figure below.
 
-![Image obtain from the post “DBSCAN: What is it? When to use it? How to use it?”](images/image2.jpeg "fig:") [fig:DBScan]
+![Image obtain from the post “DBSCAN: What is it? When to use it? How to use it?”](images/image2.jpeg "fig:")
 
-<img src="https://render.githubusercontent.com/render/math?math=R_{ij} = \frac{s_i + s_j}{d_{ij}}\] \[d_{ij} = d(v_i, v_j), s_i = \frac{1}{\mid\mid{c_i}\mid\mid}\sum_{x \in c_i} d(x, v_i)">
-\[R_{ij} = \frac{s_i + s_j}{d_{ij}}\] \[d_{ij} = d(v_i, v_j), s_i = \frac{1}{\mid\mid{c_i}\mid\mid}\sum_{x \in c_i} d(x, v_i)\]
+<img src="https://render.githubusercontent.com/render/math?math=R_{ij} = \frac{s_i + s_j}{d_{ij}}">
+<img src="https://render.githubusercontent.com/render/math?math=[d_{ij} = d(v_i, v_j), s_i = \frac{1}{\mid\mid{c_i}\mid\mid}\sum_{x \in c_i} d(x, v_i)">
+
+
 
 ### Mean-Shift Clustering
 
@@ -57,11 +59,23 @@ To find anomalies in a data distribution, one way is to find which data points b
 
 This method tells how well the clustering has been done is made using quantities and features inherent to the dataset. It works on the principle where it classifies a clustering technique good when the inter-cluster similarity is low and the intra-cluster similarity is high.Lower the DB index value, better is the clustering. However, it falls short to the best information retrieval.
 
-\[DB = \frac{1}{N}\sum_{i=1}^{N}D_i\] \[D_i = \max_{j \ne i} \frac{S_i + S_j}{M_{i,j}}\] where \(S_i\) is a measure of scatter within the cluster and \(M_{i,j}\) is the separation between the \(i^{th}\) and the \(j^{th}\) cluster
+<img src="https://render.githubusercontent.com/render/math?math=">
+<img src="https://render.githubusercontent.com/render/math?math=DB = \frac{1}{N}\sum_{i=1}^{N}D_i">
+<img src="https://render.githubusercontent.com/render/math?math=D_i = \max_{j \ne i} \frac{S_i + S_j}{M_{i,j}}">
+
+where <img src="https://render.githubusercontent.com/render/math?math=S_i"> is a measure of scatter within the cluster and <img src="https://render.githubusercontent.com/render/math?math=M_{i,j}"> is the separation between the <img src="https://render.githubusercontent.com/render/math?math=i^{th}"> and the <img src="https://render.githubusercontent.com/render/math?math=j^{th}"> cluster
 
 ### Silhouette Index
 
-Cluster Cohesion is the sum of the weight of all links within a cluster. Cluster separation is the sum of the weights between nodes in the cluster and nodes outside the cluster. Silhouette Coefficient combines the ideas of both cohesion and separation but for individual points, as well as clusters and clusterings. It can range between -1 and 1. The closer it is to 1, the more similar clusters Interpretation and validation of consistency within clusters of data.For data point \(i\) in cluster \(C_i\) \[a(i) = \frac{1}{|C_i| - 1}\sum_{j \in C_i, i \ne j} d(i, j)\] For each data point \(i \in C_{i}\) we now define \[b(i) = \min_{k \ne i} \frac{1}{|C_k|} \sum_{j \in C_k} d(i,j)\] We now define a silhouette (value) of one data point \(i\) \[s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}, if \: |C_i| > 1\] and \(s(i) = 0\), if \(|C_i| = 1\)
+Cluster Cohesion is the sum of the weight of all links within a cluster. Cluster separation is the sum of the weights between nodes in the cluster and nodes outside the cluster. Silhouette Coefficient combines the ideas of both cohesion and separation but for individual points, as well as clusters and clusterings. It can range between -1 and 1. The closer it is to 1, the more similar clusters Interpretation and validation of consistency within clusters of data.
+For data point <img src="https://render.githubusercontent.com/render/math?math=i"> in cluster <img src="https://render.githubusercontent.com/render/math?math=C_i">
+<img src="https://render.githubusercontent.com/render/math?math=a(i) = \frac{1}{|C_i| - 1}\sum_{j \in C_i, i \ne j} d(i, j)">
+For each data point <img src="https://render.githubusercontent.com/render/math?math=i"> in <img src="https://render.githubusercontent.com/render/math?math=C_i"> we now define
+<img src="https://render.githubusercontent.com/render/math?math=b(i) = \min_{k \ne i} \frac{1}{|C_k|} \sum_{j \in C_k} d(i,j)">
+<img src="https://render.githubusercontent.com/render/math?math=s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}, if \: |C_i| > 1">
+
+We now define a silhouette (value) of one data point \(i\)
+and <img src="https://render.githubusercontent.com/render/math?math=\(s(i) = 0\), if \(|C_i| = 1\)">
 
 Choosing Optimal Number of Clusters
 -----------------------------------
@@ -119,7 +133,7 @@ Now, deciding how well our clusters worked on separating or identifying anomalie
 |    Total    |        49548         |             4955             |      4793      |
 
 
-![Elbow Plot shows optimal number of clusters i.e. 5](images/image1.jpeg "fig:") [fig:elbow]
+![Elbow Plot shows optimal number of clusters i.e. 5](images/image1.jpeg "fig:") 
 
 
 
