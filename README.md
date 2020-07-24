@@ -98,37 +98,25 @@ As shown in Table [tab:kmeans], various clusters were used and their Davies Boul
 
 Now, deciding how well our clusters worked on separating or identifying anomalies for the data. As we have no way of really knowing which points are the anomalies in the data we resort to using methods like Isolation Forest and K-Nearest-Neighbors to find anomalies and see if they somehow overlap with what out clusters indicate. First of all we see that K-NN and Isolation Forest return almost 95% of the same points as anomalies, which is quite good for the purpose of this research. Then we go on to see how many of this points belong to which clusters. In Table [tab:gmmAno] and Table [tab:kmeansAno] we see that each point belongs to some cluster and for those clusters we have calculated how many of them are anomalies. It is observed that for GMM one cluster is fully identified as anomalies while the rest of the anomalies are divided into different clusters, but for K-Means it can be observed that for 4 clusters the anomalies are consisting of almost 100% anomalies. So K-means did a really good job of assigning anomalies to different clusters.
 
+|  Cluster #  | GMM (6 Clusters) | Anomalies (Isolation Forest) | Anomalies (KNN) |
+|:-----------:|:----------------:|:----------------------------:|:---------------:|
+| Cluster # 1 |      25981       |             517              |       144       |
+| Cluster # 2 |       5969       |             872              |      3864       |
+| Cluster # 3 |      10039       |             2727             |       214       |
+| Cluster # 4 |       197        |             197              |       185       |
+| Cluster # 5 |       7362       |             642              |       386       |
+|    Total    |      49548       |             4955             |      4793       |
 
-::: {#tab:gmmAno}
-    Cluster \#    GMM (6 Clusters)   Anomalies (Isolation Forest)   Anomalies (KNN)  
-  -------------- ------------------ ------------------------------ ----------------- --
-   Cluster \# 1        25981                     517                      144        
-   Cluster \# 2         5969                     872                     3864        
-   Cluster \# 3        10039                     2727                     214        
-   Cluster \# 4         197                      197                      185        
-   Cluster \# 5         7362                     642                      386        
-      Total            49548                     4955                    4793        
 
-  : Number of Elements in Each Cluster For GMM
-:::
 
-[\[tab:gmmAno\]]{#tab:gmmAno label="tab:gmmAno"}
-
-::: {#tab:kmeansAno}
-    Cluster \#    K-Means (5 Clusters)   Anomalies (Isolation Forest)   Anomalies(KNN)  
-  -------------- ---------------------- ------------------------------ ---------------- --
-   Cluster \# 1          49127                       4562                    4418       
-   Cluster \# 2            47                         47                      47        
-   Cluster \# 3           111                        111                     103        
-   Cluster \# 4           239                        211                     201        
-   Cluster \# 5            24                         24                      24        
-      Total              49548                       4955                    4793       
-
-  : Number of Elements in Each Cluster For K-Means
-:::
-
-[\[tab:kmeansAno\]]{#tab:kmeansAno label="tab:kmeansAno"}
-
+|  Cluster #  | K-Means (5 Clusters) | Anomalies (Isolation Forest) | Anomalies(KNN) |
+|:-----------:|:--------------------:|:----------------------------:|:--------------:|
+| Cluster # 1 |        49127         |             4562             |      4418      |
+| Cluster # 2 |          47          |              47              |       47       |
+| Cluster # 3 |         111          |             111              |      103       |
+| Cluster # 4 |         239          |             211              |      201       |
+| Cluster # 5 |          24          |              24              |       24       |
+|    Total    |        49548         |             4955             |      4793      |
 
 
 ![Elbow Plot shows optimal number of clusters i.e. 5](images/image1.jpeg "fig:") [fig:elbow]
