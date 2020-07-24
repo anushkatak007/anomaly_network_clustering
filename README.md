@@ -59,7 +59,6 @@ To find anomalies in a data distribution, one way is to find which data points b
 
 This method tells how well the clustering has been done is made using quantities and features inherent to the dataset. It works on the principle where it classifies a clustering technique good when the inter-cluster similarity is low and the intra-cluster similarity is high.Lower the DB index value, better is the clustering. However, it falls short to the best information retrieval.
 
-<img src="https://render.githubusercontent.com/render/math?math=">
 <img src="https://render.githubusercontent.com/render/math?math=DB = \frac{1}{N}\sum_{i=1}^{N}D_i">
 <img src="https://render.githubusercontent.com/render/math?math=D_i = \max_{j \ne i} \frac{S_i + S_j}{M_{i,j}}">
 
@@ -68,14 +67,20 @@ where <img src="https://render.githubusercontent.com/render/math?math=S_i"> is a
 ### Silhouette Index
 
 Cluster Cohesion is the sum of the weight of all links within a cluster. Cluster separation is the sum of the weights between nodes in the cluster and nodes outside the cluster. Silhouette Coefficient combines the ideas of both cohesion and separation but for individual points, as well as clusters and clusterings. It can range between -1 and 1. The closer it is to 1, the more similar clusters Interpretation and validation of consistency within clusters of data.
+
 For data point <img src="https://render.githubusercontent.com/render/math?math=i"> in cluster <img src="https://render.githubusercontent.com/render/math?math=C_i">
+
 <img src="https://render.githubusercontent.com/render/math?math=a(i) = \frac{1}{|C_i| - 1}\sum_{j \in C_i, i \ne j} d(i, j)">
+
 For each data point <img src="https://render.githubusercontent.com/render/math?math=i"> in <img src="https://render.githubusercontent.com/render/math?math=C_i"> we now define
+
 <img src="https://render.githubusercontent.com/render/math?math=b(i) = \min_{k \ne i} \frac{1}{|C_k|} \sum_{j \in C_k} d(i,j)">
-<img src="https://render.githubusercontent.com/render/math?math=s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}, if \: |C_i| > 1">
 
 We now define a silhouette (value) of one data point \(i\)
-and <img src="https://render.githubusercontent.com/render/math?math=\(s(i) = 0\), if \(|C_i| = 1\)">
+
+<img src="https://render.githubusercontent.com/render/math?math=s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}, if \: |C_i| > 1">
+
+and <img src="https://render.githubusercontent.com/render/math?math=s(i) = 0, \: if \: |C_i| = 1">
 
 Choosing Optimal Number of Clusters
 -----------------------------------
